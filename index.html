@@ -3,61 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>แอพบันทึกรายรับรายจ่าย</title>
-
-  <!-- Chart.js สำหรับกราฟ -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- เชื่อม Manifest (PWA) -->
-  <link rel="manifest" href="manifest.json">
-
-  <!-- เชื่อม CSS -->
+  <title>MyFinance App</title>
   <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
 
   <!-- 🔥 ส่วนหัว -->
   <header>
-    <h1>แอพบันทึกรายรับรายจ่าย</h1>
-    <button id="toggleDark">🌙</button>
+    <h1>MyFinance</h1>
+    <button id="darkModeToggle">🌙</button>
   </header>
 
-  <!-- 🏠 หน้าแดชบอร์ด -->
-  <section id="dashboard">
-    <h2>แดชบอร์ด</h2>
-    <p>ยอดรวมทั้งหมด: ฿<span id="totalAmount">0</span></p>
-    <canvas id="summaryChart" width="400" height="200"></canvas>
-  </section>
+  <!-- 🟢 หน้าแดชบอร์ด -->
+  <main id="dashboard" class="active">
+    <h2>ยอดคงเหลือ</h2>
+    <p id="balance">฿0</p>
+    <canvas id="chart" width="300" height="300"></canvas>
+  </main>
 
-  <!-- ➕ ฟอร์มบันทึก -->
-  <section id="addData">
-    <h2>บันทึกข้อมูล</h2>
+  <!-- ➕ หน้าเพิ่มข้อมูล -->
+  <main id="addRecord">
+    <h2>เพิ่มรายการ</h2>
     <form id="recordForm">
       <input type="text" id="title" placeholder="ชื่อรายการ" required>
       <input type="number" id="amount" placeholder="จำนวนเงิน" required>
-      <select id="category">
+      <select id="type">
         <option value="income">รายรับ</option>
         <option value="expense">รายจ่าย</option>
       </select>
       <button type="submit">บันทึก</button>
     </form>
-  </section>
+  </main>
 
-  <!-- 📝 รายการทั้งหมด -->
-  <section id="recordsList">
-    <h2>ประวัติ</h2>
-    <ul id="records"></ul>
-  </section>
+  <!-- 📝 หน้าแจ้งเตือน -->
+  <main id="notifications">
+    <h2>แจ้งเตือน</h2>
+    <p>ยังไม่มีแจ้งเตือน</p>
+  </main>
 
-  <!-- 🟢 เมนูไอคอนล่าง (เหมือนแอพมือถือ) -->
-  <nav class="bottom-nav">
-    <button onclick="showSection('dashboard')">🏠 หน้าแรก</button>
-    <button onclick="showSection('addData')">➕ บันทึก</button>
-    <button onclick="showSection('recordsList')">📋 ประวัติ</button>
+  <!-- ⚙️ หน้าตั้งค่า -->
+  <main id="settings">
+    <h2>ตั้งค่า</h2>
+    <p>Coming Soon!</p>
+  </main>
+
+  <!-- 🔵 เมนูไอคอนล่าง -->
+  <nav>
+    <button onclick="showPage('dashboard')">🏠</button>
+    <button onclick="showPage('addRecord')">➕</button>
+    <button onclick="showPage('notifications')">🔔</button>
+    <button onclick="showPage('settings')">⚙️</button>
   </nav>
 
-  <!-- 🔥 เชื่อม JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
