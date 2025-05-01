@@ -1,71 +1,76 @@
-/* ฟอนต์และดีไซน์เริ่มต้น */
+/* ฟอนต์และโครงสร้าง */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
-  padding: 0;
-  background: #f0f0f0;
+  background: #f9f9f9;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 header {
+  background: #6200EE;
+  color: white;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #4CAF50;
-  color: white;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  display: none;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
 }
 
-h1, h2 {
-  margin: 0.5rem 0;
-}
-
-section {
-  padding: 1rem;
+main.active {
+  display: flex;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 300px;
   gap: 0.5rem;
 }
 
 input, select, button {
-  padding: 0.5rem;
+  padding: 0.8rem;
   font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+button {
+  background: #6200EE;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-li {
-  background: white;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  border-radius: 5px;
-}
-
-/* เมนูด้านล่าง */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+nav {
   display: flex;
   justify-content: space-around;
-  background: #4CAF50;
+  background: #6200EE;
   padding: 0.5rem 0;
 }
 
-.bottom-nav button {
+nav button {
   background: none;
   border: none;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
-/* ดาร์กโหมด */
+/* 🌙 ดาร์กโหมด */
 body.dark {
   background: #121212;
   color: #eee;
@@ -75,10 +80,12 @@ body.dark header {
   background: #333;
 }
 
-body.dark li {
-  background: #1e1e1e;
+body.dark nav {
+  background: #333;
 }
 
-body.dark .bottom-nav {
+body.dark input, body.dark select {
   background: #333;
+  color: white;
+  border: 1px solid #555;
 }
