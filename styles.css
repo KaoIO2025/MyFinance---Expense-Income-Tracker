@@ -1,0 +1,84 @@
+/* ฟอนต์และดีไซน์เริ่มต้น */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4CAF50;
+  color: white;
+  padding: 1rem;
+}
+
+h1, h2 {
+  margin: 0.5rem 0;
+}
+
+section {
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input, select, button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* เมนูด้านล่าง */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: #4CAF50;
+  padding: 0.5rem 0;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* ดาร์กโหมด */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark header {
+  background: #333;
+}
+
+body.dark li {
+  background: #1e1e1e;
+}
+
+body.dark .bottom-nav {
+  background: #333;
+}
